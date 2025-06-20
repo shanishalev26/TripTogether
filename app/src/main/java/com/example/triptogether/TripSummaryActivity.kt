@@ -93,9 +93,6 @@ class TripSummaryActivity : AppCompatActivity() {
                 favRef.removeValue()
             }
 
-            val tripRef = database.child("trips").child(userId).child(trip.id)
-            tripRef.child("isFavorite").setValue(newFavoriteState)
-
             isFavorite = newFavoriteState
             updateFavoriteIcon()
 
@@ -105,6 +102,7 @@ class TripSummaryActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
         }
+
 
         mapTab.setOnClickListener {
             val intent = Intent(this, TripMapActivity::class.java)

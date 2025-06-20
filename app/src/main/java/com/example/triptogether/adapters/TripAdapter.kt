@@ -73,15 +73,9 @@ class TripAdapter(
         }
 
         holder.favoriteIcon.setOnClickListener {
-            val tripRef = FirebaseDatabase.getInstance().getReference("trips")
-                .child(uid)
-                .child(trip.id)
-
             favoriteRef.get().addOnSuccessListener { snapshot ->
                 val isFavorite = snapshot.exists()
                 val newFavoriteState = !isFavorite
-
-                tripRef.child("isFavorite").setValue(newFavoriteState)
 
                 if (newFavoriteState) {
                     favoriteRef.setValue(trip)
@@ -94,6 +88,7 @@ class TripAdapter(
                 )
             }
         }
+
 
         // Navigate to TripSummary
         holder.itemView.setOnClickListener {
