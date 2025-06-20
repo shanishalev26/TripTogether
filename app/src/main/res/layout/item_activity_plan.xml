@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/_12dp"
+    android:background="@drawable/bg_item_background"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_time"
+        android:textStyle="bold"
+        android:textSize="@dimen/default_size"
+        android:layout_marginEnd="@dimen/_12dp" />
+
+    <TextView
+        android:id="@+id/tvEmoji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/emoji_default"
+        android:textSize="20sp"
+        android:layout_marginEnd="@dimen/_12dp" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/default_plan"
+        android:textSize="@dimen/default_size" />
+</LinearLayout>

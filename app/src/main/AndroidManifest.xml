@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.TripTogether"
+        tools:targetApi="31">
+
+        <activity android:name=".AddTripActivity"
+            android:exported="false" />
+        <activity android:name=".DocumentsActivity"
+            android:exported="false" />
+        <activity android:name=".DocumentsHomeActivity"
+            android:exported="false" />
+        <activity android:name=".EditFriendsActivity"
+            android:exported="false" />
+        <activity android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity android:name=".FavoriteActivity"
+            android:exported="false" />
+        <activity android:name=".FriendsActivity"
+            android:exported="false" />
+        <activity android:name=".GroupChatActivity"
+            android:exported="false" />
+        <activity android:name=".ImagePreviewActivity"
+            android:exported="false" />
+        <activity android:name=".ImagesListActivity"
+            android:exported="false" />
+        <activity android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"
+            android:exported="true" />
+        <activity android:name=".SearchResultsActivity"
+            android:exported="false" />
+        <activity android:name=".TripMapActivity"
+            android:exported="false" />
+        <activity android:name=".TripPlanActivity"
+            android:exported="false" />
+        <activity android:name=".TripSummaryActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+    </application>
+
+</manifest>

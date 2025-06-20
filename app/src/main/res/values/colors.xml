@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue_primary">#7276ED</color>
+    <color name="blue_light">#AEB0E9</color>
+    <color name="blue_secondary">#4431B6</color>
+    <color name="light_background">#FAF8ED</color>
+    <color name="second_background">#E0DFED</color>
+    <color name="gray">#999999</color>
+    <color name="light_black">#80000000</color>
+    <color name="gray_light">#BCB9B9</color>
+    <color name="purple_dot">#592FCE</color>
+    <color name="blue_dark">#2E218A</color>
+
+
+
+</resources>

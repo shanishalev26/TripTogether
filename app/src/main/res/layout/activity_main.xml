@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/light_background">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/userIconTop"
+        android:layout_width="@dimen/_40dp"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginTop="@dimen/_40dp"
+        android:layout_marginEnd="@dimen/_24dp"
+        android:contentDescription="@string/profile"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/sample_user_icon"
+        android:background="@drawable/circle_background"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/greetingText"
+        android:layout_width="@dimen/_200dp"
+        android:layout_height="@dimen/_32dp"
+        android:layout_marginStart="@dimen/_24dp"
+        android:layout_marginTop="@dimen/_40dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="@string/hi"
+        android:textColor="@color/blue_secondary"
+        android:textSize="@dimen/_24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/searchContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_16"
+        android:layout_marginStart="@dimen/_24dp"
+        android:layout_marginEnd="@dimen/_24dp"
+        app:layout_constraintTop_toBottomOf="@id/greetingText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/searchInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/search_places"
+            app:boxBackgroundMode="filled"
+            app:boxCornerRadiusTopStart="@dimen/_24dp"
+            app:boxCornerRadiusTopEnd="@dimen/_24sp"
+            app:boxCornerRadiusBottomStart="@dimen/_24dp"
+            app:boxCornerRadiusBottomEnd="@dimen/_24dp"
+            app:boxBackgroundColor="@color/light_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/searchIcon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_places"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48dp"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textColorHint="@color/gray"
+                android:textSize="@dimen/default_size" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="@dimen/_40dp"
+            android:layout_height="@dimen/_40dp"
+            android:layout_marginStart="8dp"
+            android:padding="8dp"
+            android:src="@drawable/ic_search_icon"
+            android:contentDescription="@string/search"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_16"
+        android:layout_marginTop="@dimen/_156dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchContainer">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btnUpcoming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/upcoming"
+            android:textColor="@color/black"
+            android:textSize="@dimen/default_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnPast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/past"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/default_size" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tripRecycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingStart="@dimen/default_16"
+        android:paddingEnd="@dimen/default_16"
+        android:paddingTop="8dp"
+        android:background="@color/second_background"
+        app:layout_constraintTop_toBottomOf="@id/tabLayout"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:listitem="@layout/item_trip" />
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_56dp"
+        android:layout_marginBottom="@dimen/default_size"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/homeIcon"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_home_blue"
+            android:contentDescription="@string/home"/>
+
+        <!--
+        <ImageView
+            android:id="@+id/clockIcon"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_clock"
+            android:contentDescription="@string/trips"/>
+        -->
+        <ImageView
+            android:id="@+id/heartIcon"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_heart"
+            android:contentDescription="@string/favorites"/>
+
+        <ImageView
+            android:id="@+id/userIconBottom"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_user"
+            android:contentDescription="@string/profile"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
